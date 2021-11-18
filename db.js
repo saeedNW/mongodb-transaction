@@ -10,7 +10,7 @@ const mongoose = require('mongoose');
 const options = {
     ssl: true,
     sslValidate: true,
-    sslCA: '/var/lib/mongo/mongodb.pem',
+    sslCA: '/var/lib/mongodb/mongodb.pem',
     authSource: 'replicaSet'
 };
 
