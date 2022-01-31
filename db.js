@@ -1,23 +1,10 @@
 /** installed external modules */
 const mongoose = require('mongoose');
 
-/**
- *
- * WSL (linux) Configuration
- *
- */
-
-const options = {
-    ssl: true,
-    sslValidate: true,
-    sslCA: '/var/lib/mongodb/mongodb.pem',
-    authSource: 'replicaSet'
-};
-
 /** connect to mongodb */
 const connectDB = async () => {
     try {
-        let conn = await mongoose.connect('mongodb://admin:replicaSetAdmin13@localhost:27018/replicaSet?replicaSet=rs0', options);
+        let conn = await mongoose.connect('mongodb://localhost:27017/replicaSet?replicaSet=rs0');
 
         console.log(`MongoDB Connected: ${conn.connection.host}`)
 
